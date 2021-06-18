@@ -33,7 +33,7 @@ router.delete('/costumers/:id', function(req, res){
 });
 
 
-router.get('/costumers/login', function(req, res){
+router.post('/costumers/login', function(req, res){
     Costumer.findOne(({email: req.body.email, password: req.body.password}), function(err, costumer){
         assert.equal(err, null);
         res.json(costumer)
