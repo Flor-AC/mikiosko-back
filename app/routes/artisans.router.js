@@ -35,7 +35,7 @@ router.delete('/artisans/:id', function(req, res){
 });
 
 
-router.get('/artisans/login', function(req, res){
+router.post('/artisans/login', function(req, res){
     Artisan.findOne(({email: req.body.email, password: req.body.password}), function(err, artisan){
         assert.equal(err, null);
         res.json(artisan)
